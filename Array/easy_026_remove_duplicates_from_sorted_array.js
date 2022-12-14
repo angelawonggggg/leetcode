@@ -1,4 +1,4 @@
-let nums = [0, 1, 1, 1, 2, 2, 3, 3, 4]; // [1,]
+let nums = [0, 1, 1, 1, 2, 2, 3, 3, 10]; // [1,]
 
 var removeDuplicates = function (nums) {
   let count = 0;
@@ -9,7 +9,9 @@ var removeDuplicates = function (nums) {
       nums[count] = nums[i];
     }
   }
-  return ++count; // 如果用count++會攞咗第7行個count++既value，真係想+1要用++count
+
+  console.log(nums);
+  return ++count; // 如果用count++會攞咗第8行個count++既value，真係想+1要用++count
 };
 
 console.log(removeDuplicates(nums));

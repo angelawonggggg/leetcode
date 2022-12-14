@@ -11,20 +11,37 @@
 
 let number = [0, 1, 0, 3, 12];
 
-var moveZeroes = function (number) {
+var moveZeroes = function (nums) {
+  let nonZeroIndex = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] != 0) {
+      nums[nonZeroIndex] = nums[i]; // moving all non zero numbers to the beginning of the array
+      nonZeroIndex++;
+    }
+  }
+
+  for (let i = nonZeroIndex; i < nums.length; i++) {
+    nums[i] = 0; // fillinf the rest of the array with 0s
+  }
+
+  return nums;
+};
+
+var moveZeroes1 = function (number) {
   var index = 0;
   for (let i = 0; i < number.length; i++) {
     n = number[i];
     if (n !== 0) {
-      number[index++] = n        //n = number[index++] is not the same
+      number[index++] = n; //n = number[index++] is not the same
     }
   }
 
   for (index; index < number.length; index++) {
-    number[index] = 0; 
+    number[index] = 0;
   }
 
-  return number
+  return number;
 };
 
 console.log(moveZeroes(number));

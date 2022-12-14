@@ -41,20 +41,19 @@ var longestCommonPrefix = function (strs) {
 
 console.log(longestCommonPrefix(["cir", "car"]));
 
+// Better code
 
-// Better code 
-
-var longestCommonPrefix = function(strs) {
-	// Declare prefix as empty string
-    let prefix = '';
-	// Loop through every text in the array
-    for (let i = 0; i < strs[0].length; i++) {
-		// If all items have similar *i-th* element, add that element to prefix, else return the prefix at that point
-        if (strs.every(a => a[i] === strs[0].charAt(i))){
-            prefix += strs[0].charAt(i)
-        }else{
-            return prefix;
-        }
+var longestCommonPrefix = function (strs) {
+  // Declare prefix as empty string
+  let prefix = "";
+  // Loop through every text in the array
+  for (let i = 0; i < strs[0].length; i++) {
+    // If all items have similar *i-th* element, add that element to prefix, else return the prefix at that point
+    if (strs.every((a) => a[i] === strs[0].charAt(i))) {
+      prefix += strs[0].charAt(i);
+    } else {
+      return prefix;
     }
-    return prefix;
+  }
+  return prefix;
 };
